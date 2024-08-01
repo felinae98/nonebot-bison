@@ -17,3 +17,5 @@ docs
 
 !pyproject.toml
 !README.md
+!docker/start.sh
+!docker/gunicorn_conf.py

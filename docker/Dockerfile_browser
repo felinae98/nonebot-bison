@@ -1,4 +1,7 @@
 FROM python:3.11
+COPY ./docker/start.sh /start.sh
+RUN chmod +x /start.sh
+COPY ./docker/gunicorn_conf.py /gunicorn_conf.py
 RUN   apt-get update && apt-get install -y fonts-wqy-microhei chromium nano
 RUN python3 -m pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
 RUN python3 -m pip install poetry && poetry config virtualenvs.create false
