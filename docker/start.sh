@@ -1,6 +1,12 @@
 #! /usr/bin/env sh
 set -e
 
+# 确保 /app/bot.py 存在
+if [! -f /app/bot.py]; then
+    echo "bot.py not found"
+    exit 1
+fi
+
 if [ -f /app/app/main.py ]; then
     DEFAULT_MODULE_NAME=app.main
 elif [ -f /app/main.py ]; then

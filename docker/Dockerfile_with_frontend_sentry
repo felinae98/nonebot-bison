@@ -49,6 +49,9 @@ RUN mv docker.env.prod .env.prod && \
   nb adapter install nonebot-adapter-red && \
   nb adapter install nonebot-adapter-qq && \
   nb plugin install nonebot-plugin-sentry
+
+# Bot
+ENV APP_MODULE=bot:app
 ENV HOST=0.0.0.0
 CMD ["/start.sh"]
 
