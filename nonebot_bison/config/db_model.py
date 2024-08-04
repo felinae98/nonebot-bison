@@ -1,17 +1,13 @@
 import datetime
-from pathlib import Path
 
+from nonebot_plugin_orm import Model
 from nonebot_plugin_saa import PlatformTarget
 from sqlalchemy.dialects.postgresql import JSONB
 from nonebot.compat import PYDANTIC_V2, ConfigDict
-from nonebot_plugin_datastore import get_plugin_data
 from sqlalchemy.orm import Mapped, relationship, mapped_column
 from sqlalchemy import JSON, String, ForeignKey, UniqueConstraint
 
 from ..types import Tag, Category
-
-Model = get_plugin_data().Model
-get_plugin_data().set_migration_dir(Path(__file__).parent / "migrations")
 
 
 class User(Model):
